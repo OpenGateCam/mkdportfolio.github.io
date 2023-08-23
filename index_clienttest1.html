@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/Home.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer="defer" src="./assets/js/Home.js" ></script>
+    <title>Mitchell K Davis</title>
+    <style>
+        .fullscreen-photo {
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            margin:0 auto; 
+            display: block;
+        }  
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 2000px; /* Adjust this height according to your content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .scroll-down-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: opacity 0.5s;
+        }
+
+        .scroll-down-text {
+            margin-bottom: 10px;
+        }
+
+        .scroll-down-arrow {
+            cursor: pointer;
+        }
+
+        /* Optional: Hide the scroll-down-container when scrolling down */
+        .scroll-down-hide {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body onscroll="handleScroll()">
+    <header class="fixed top-0 left-0 z-50 inset-x-px">
+        <nav class="bg-transparent">
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-center">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 text-center">
+                            <h1 class="text-2xl font-medium text-white montserrat">Mitchell K Davis</h1>
+                            <p class="text-sm montserrat text-white">ASSISTANT CAMERA | FILM EQUIPMENT & SERVICE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+     <img class="fullscreen-photo" id="backgroundPhoto" alt="Random Background Photo">
+    <div class="scroll-down-container" id="scrollDownContainer">
+        <div class="scroll-down-text">Scroll Down</div>
+        <div class="scroll-down-arrow" onclick="scrollPageDown()">
+            &#8595;
+        </div>
+    </div>
+
+        <div style="float:center; width:300px">
+             <div style="height:60%; border:3px solid #595854;">resume</div>    
+        </div>
+       <div class= "column" style="float:right; height:100px; overflow: hidden;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5438474ee4b013544be500c1/1580689671669-QGDT0ZK50SFVP4BO4T72/chase.png?format=500w">
+        <img src="https://images.squarespace-cdn.com/content/v1/5438474ee4b013544be500c1/1580689672573-ZS12H3G71BIMB27AXWYM/GUCCI.png?format=500w">
+        <img src="https://images.squarespace-cdn.com/content/v1/5438474ee4b013544be500c1/1580689671290-2V9L9MHFW1Z1580LMUCU/at-t-logo.png?format=500w">
+        <img src="https://images.squarespace-cdn.com/content/v1/5438474ee4b013544be500c1/1469997007895-XVQMRVX68FACC9JXBLIC/Boiler_Room_Music_Project_Logo.jpeg.jpeg?format=500w">
+        <img src="https://images.squarespace-cdn.com/content/v1/5438474ee4b013544be500c1/1580689672983-NZ74O88L48QO8EWXDDNF/NT.png?format=500w">
+        <img src="https://images.squarespace-cdn.com/content/v1/5438474ee4b013544be500c1/1580689673939-TEFHM2MK62JA1XAHCFPE/verizon.png?format=500w">
+        <img src="https://images.squarespace-cdn.com/content/v1/5438474ee4b013544be500c1/1455493292154-C68N5H0BYAO9NUORXO0P/Top-Rank-logo-bw.jpg?format=500w">
+      </div>
+
+    
+      <script>
+        let lastScrollPosition = 0;
+        const scrollDownContainer = document.getElementById('scrollDownContainer');
+
+        function handleScroll() {
+            const currentScrollPosition = window.scrollY;
+            if (currentScrollPosition > lastScrollPosition) {
+                // Scrolling down, hide the scroll-down-container
+                scrollDownContainer.classList.add('scroll-down-hide');
+            } else {
+                // Scrolling up, show the scroll-down-container
+                scrollDownContainer.classList.remove('scroll-down-hide');
+            }
+            lastScrollPosition = currentScrollPosition;
+        }
+
+        function scrollPageDown() {
+            // Calculate the height of the viewport
+            const viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+            // Scroll down one screen length smoothly
+            window.scrollBy({
+                top: viewportHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <script>
+        // Array of image paths
+        const imagePaths = [
+        "https://res.cloudinary.com/dpiqcmkyo/image/upload/v1690736328/MD_webportfolio_45_twnguu.jpg",
+        "https://res.cloudinary.com/dpiqcmkyo/image/upload/v1690683803/MD_webportfolio_41_tmquio.jpg",
+        "https://res.cloudinary.com/dpiqcmkyo/image/upload/v1690659768/MD_webportfolio_39_g8oxv5.jpg",
+        "https://res.cloudinary.com/dpiqcmkyo/image/upload/v1690659767/MD_webportfolio_38_ed9ktc.jpg",
+        "https://res.cloudinary.com/dpiqcmkyo/image/upload/v1690659767/MD_webportfolio_37_utn3xm.jpg",
+        "https://res.cloudinary.com/dpiqcmkyo/image/upload/v1690659767/MD_webportfolio_34_clul3w.jpg"
+        ];
+
+        // Function to set a random background image
+        function setRandomBackground() {
+        const randomNumber = Math.floor(Math.random() * imagePaths.length);
+        const randomImagePath = imagePaths[randomNumber];
+        const backgroundPhoto = document.getElementById("backgroundPhoto");
+        backgroundPhoto.src = randomImagePath;
+        }
+
+        // Call the function on page load to set the initial background
+        setRandomBackground();
+    </script>
+
+    <footer class="px-8 py-14 bg-gray-100 mt-4">
+        <p class="montserrat text-center text-md">&copy; Mitchell Davis</p>
+    </footer>
+</body>
+</html>
