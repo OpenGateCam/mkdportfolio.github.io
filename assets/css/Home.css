@@ -7,13 +7,40 @@ html,body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.main-image {
+.main-banner-holder {
+    position: relative;
+}
+
+.main-image-first {
     width: 100%; 
     object-fit: cover; 
     margin: 0 auto; 
     display: block; 
     object-position: center; 
-    height: 100vh
+    height: 100vh;
+}
+
+.main-image-second {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; 
+    object-fit: cover; 
+    margin: 0 auto; 
+    display: block; 
+    object-position: center; 
+    height: 100vh;
+}
+
+.first-image {
+    opacity: 1;
+}
+
+.second-image {
+    opacity: 0;
+    transition: opacity .3s cubic-bezier(0, 0.04, 1, 1);
 }
 
 @media screen and (max-width: 640px) {
